@@ -1,0 +1,34 @@
+import yfinance as yf
+import matplotlib.pyplot as plt
+import pandas as pd
+tickers = ["LULU", "NKE", "DECK"]
+print("Downloading stock data...")
+try:
+    data = yf.download(tickers, period="1y")["Close"]
+    if data.empty:
+        print("No data found. Check your ticker symbols.")
+    else:
+        data = data.dropna(axis=1, how='all')
+
+        if data.empty:
+            print("No valid stock data found. Try different tickers.")
+        else:
+            Indexed = data / data.iloc[0] * 100
+
+            plt.figure(figsize=(10, 6))
+            for ticker in Indexed.columns:
+                plt.plot(Indexed.index, Indexed[ticker], label=ticker)
+
+            plt.title("Stock Performance Comparison (Last 12 Months)")
+            plt.xlabel("Date")
+            plt.ylabel("Indexed Price ($)")
+            plt.legend()
+            plt.grid(True)
+            plt.tight_layout()
+            plt.show()
+            print("Chart generated successfully!")
+
+except Exception as e:
+    print("An error occurred while fetching data:")
+    print(str(e))
+
