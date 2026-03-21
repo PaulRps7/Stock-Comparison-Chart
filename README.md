@@ -3,6 +3,7 @@ This python code uses Yahoo Finance API (`yfinance`) paired with `matplotlib` to
 - This is done by pulling the historical price (HSP) data from `yfinance` and indexing the prices to 100. The close prices are then plotted on `matplotlib`.
 ## How To Use
 Download `yfinance` by writing 'pip install' `yfinance` in your terminal.
+
 Download `matplotlib` by writing 'pip install' `matplotlib` in your terminal.
 
 ## Changing Stocks
