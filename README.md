@@ -1,6 +1,6 @@
 # Stock Comparison Graph
 This python code uses Yahoo Finance API (`yfinance`) paired with `matplotlib` to compare the performance of multiple stocks over a given period of time.
-- This is done by pulling the historical price (HSP) data from `yfinance` and indexing the prices to 100. The close prices are then plotted on `matplotlib`.
+- This is done by pulling the historical price (HSP) data from `yfinance` and indexing the prices to 100. The close prices are then plotted on a graph using `matplotlib`.
 ## How To Use
 Download `yfinance` by writing 'pip install' `yfinance` in your terminal.
 
